@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Retro - Juego Clásico</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <div class="header">
+            <h1 class="game-title">🐍 SNAKE RETRO</h1>
+            <div class="score-container">
+                <div class="score">
+                    <span class="label">PUNTUACIÓN:</span>
+                    <span id="score-value">0</span>
+                </div>
+                <div class="high-score">
+                    <span class="label">MEJOR:</span>
+                    <span id="high-score-value">0</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="game-area">
+            <canvas id="gameCanvas" width="400" height="400"></canvas>
+            <div id="game-over" class="game-over hidden">
+                <h2>¡GAME OVER!</h2>
+                <p>Puntuación Final: <span id="final-score">0</span></p>
+                <button id="restart-btn" class="restart-btn">JUGAR DE NUEVO</button>
+            </div>
+            <div id="start-screen" class="start-screen">
+                <h2>¡PRESIONA ESPACIO PARA COMENZAR!</h2>
+                <div class="controls">
+                    <p>Controles:</p>
+                    <div class="control-item">🔼 ↑ Arriba</div>
+                    <div class="control-item">🔽 ↓ Abajo</div>
+                    <div class="control-item">◀️ ← Izquierda</div>
+                    <div class="control-item">▶️ → Derecha</div>
+                    <div class="control-item">⏸️ ESPACIO Pausa</div>
+                </div>
+            </div>
+            <!-- Controles táctiles para móvil -->
+            <div id="mobile-controls" class="mobile-controls hidden">
+                <div class="mobile-row">
+                    <button class="mobile-btn" id="btn-up">▲</button>
+                </div>
+                <div class="mobile-row">
+                    <button class="mobile-btn" id="btn-left">◀</button>
+                    <button class="mobile-btn" id="btn-pause">⏸️</button>
+                    <button class="mobile-btn" id="btn-right">▶</button>
+                </div>
+                <div class="mobile-row">
+                    <button class="mobile-btn" id="btn-down">▼</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Usa las flechas del teclado para moverte • ESPACIO para pausar</p>
+        </div>
+    </div>
+    
+    <script src="config.js"></script>
+    <script src="utils.js"></script>
+    <script src="audio.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
